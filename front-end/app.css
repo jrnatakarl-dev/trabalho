@@ -1,0 +1,88 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: system-ui, sans-serif;
+  background: #f4f6f8;
+  color: #222;
+  padding: 1.5rem;
+}
+
+header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.aluno-info {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  background: #fff;
+  padding: .75rem 1.25rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,.08);
+}
+
+select {
+  padding: .4rem .6rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+#saldo-atual { font-weight: 700; color: #0a7; }
+
+.grid-produtos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.card-produto {
+  background: #fff;
+  border-radius: 16px;
+  padding: 1.25rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,.06);
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+  transition: transform .15s;
+}
+
+.card-produto:hover { transform: translateY(-3px); }
+
+.card-produto h3 { font-size: 1.1rem; }
+.card-produto .preco { font-size: 1.4rem; font-weight: 800; color: #0a7; }
+.card-produto .descricao { font-size: .9rem; color: #555; flex: 1; }
+
+.btn-comprar {
+  padding: .6rem 1rem;
+  border: none;
+  border-radius: 10px;
+  background: #0a7;
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background .2s;
+}
+.btn-comprar:hover { background: #085; }
+.btn-comprar:disabled { background: #aaa; cursor: not-allowed; }
+
+.mensagem {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: .9rem 1.6rem;
+  border-radius: 10px;
+  font-weight: 600;
+  color: #fff;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .3s;
+}
+.mensagem.sucesso { background: #0a7; opacity: 1; }
+.mensagem.erro    { background: #c33; opacity: 1; }
